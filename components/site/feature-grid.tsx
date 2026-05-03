@@ -1,18 +1,18 @@
-import { HugeiconsIcon } from "@hugeicons/react"
 import {
-  Mic01Icon,
-  CpuIcon,
-  CodeFolderIcon,
-  Notebook01Icon,
+  AiIdeaIcon,
   CheckListIcon,
-  PaintBrush02Icon,
-  Settings02Icon,
-  EnergyIcon,
+  CodeFolderIcon,
   CommandIcon,
+  CpuIcon,
+  EnergyIcon,
   Layout02Icon,
-  Search01Icon,
+  Mic01Icon,
+  Notebook01Icon,
+  PaintBrush02Icon,
   RecordIcon,
+  Search01Icon,
 } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
 import { Section, SectionEyebrow, SectionHeading } from "./section"
 
@@ -28,14 +28,14 @@ const items = [
     desc: "Run fully offline through LM Studio. Your code stays on disk.",
   },
   {
-    icon: CodeFolderIcon,
-    title: "Snippets & skills",
-    desc: "Reusable workflows your agents can call by name.",
+    icon: AiIdeaIcon,
+    title: "AI autocomplete",
+    desc: "Fast AI autocompletion inside code editor.",
   },
   {
     icon: Notebook01Icon,
     title: "TERAX.md",
-    desc: "Per-project memory and config — versioned with your repo.",
+    desc: "Per-project memory and config - versioned with your repo.",
   },
   {
     icon: CheckListIcon,
@@ -45,7 +45,7 @@ const items = [
   {
     icon: PaintBrush02Icon,
     title: "Prebuilt themes",
-    desc: "Catppuccin, Tokyo Night, and friends — drop-in.",
+    desc: "Atomone, Tokyo Night, and friends - drop-in.",
   },
   {
     icon: Layout02Icon,
@@ -68,9 +68,9 @@ const items = [
     desc: "Modal editing first-class. Bring your dotfiles.",
   },
   {
-    icon: Settings02Icon,
-    title: "Customizable",
-    desc: "Keybinds, layouts, providers, models — every knob exposed.",
+    icon: CodeFolderIcon,
+    title: "Snippets & skills",
+    desc: "Reusable workflows your agents can call by name.",
   },
   {
     icon: EnergyIcon,
@@ -83,7 +83,7 @@ export function FeatureGrid() {
   return (
     <Section id="more">
       <div className="mx-auto max-w-3xl">
-        <SectionEyebrow>05 — Toolkit</SectionEyebrow>
+        <SectionEyebrow>05 - Toolkit</SectionEyebrow>
         <SectionHeading>More built in. No plugins required.</SectionHeading>
       </div>
 
@@ -94,7 +94,11 @@ export function FeatureGrid() {
             className="group relative bg-background/70 p-6 backdrop-blur-sm transition-colors hover:bg-background"
           >
             <div className="inline-flex size-8 items-center justify-center text-foreground/70 transition-colors group-hover:text-foreground">
-              <HugeiconsIcon icon={it.icon} className="size-5" strokeWidth={1.6} />
+              <HugeiconsIcon
+                icon={it.icon}
+                className="size-5"
+                strokeWidth={1.6}
+              />
             </div>
             <div className="mt-5 text-[15px] font-medium tracking-tight">
               {it.title}

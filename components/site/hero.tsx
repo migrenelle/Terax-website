@@ -1,19 +1,19 @@
 "use client"
 
-import Link from "next/link"
-import { motion } from "motion/react"
-import { HugeiconsIcon } from "@hugeicons/react"
 import {
-  ArrowRight01Icon,
-  GithubIcon,
   AppleIcon,
+  ArrowRight01Icon,
   ComputerIcon,
+  GithubIcon,
   MicrosoftIcon,
 } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { motion } from "motion/react"
+import Link from "next/link"
 
-import { SITE, VERSION, DOWNLOADS } from "@/lib/site"
-import { Button } from "@/components/ui/button"
 import { TypingAnimation } from "@/components/text-typing"
+import { Button } from "@/components/ui/button"
+import { DOWNLOADS, SITE, VERSION } from "@/lib/site"
 import { usePlatform } from "./platform-detect"
 
 export function Hero() {
@@ -60,7 +60,7 @@ export function Hero() {
             className="group inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/60 px-3 py-1 font-mono text-[11px] tracking-[0.12em] text-muted-foreground uppercase backdrop-blur-md transition-colors hover:text-foreground"
           >
             <span className="size-1.5 rounded-full bg-foreground/70" />
-            <span>v{VERSION} — out now</span>
+            <span>v{VERSION} - out now</span>
             <HugeiconsIcon
               icon={ArrowRight01Icon}
               className="size-3 transition-transform group-hover:translate-x-0.5"
@@ -76,9 +76,9 @@ export function Hero() {
           className="mt-7 text-4xl font-semibold tracking-[-0.04em] text-balance sm:text-5xl md:text-6xl lg:text-7xl"
         >
           <span className="text-foreground/55">The AI-native</span>
-          <br className="hidden sm:inline" />{" "}
+          <br className="inline" />{" "}
           <TypingAnimation
-            words={["terminal.", "editor.", "AI workflow.", "everything."]}
+            words={["terminal.", "editor.", "agentic env.", "everything."]}
             loop
             typeSpeed={70}
             deleteSpeed={40}
@@ -92,10 +92,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.12 }}
-          className="mt-7 max-w-xl text-base text-balance text-muted-foreground sm:text-lg"
+          className="mt-7 max-w-xl text-base text-balance text-foreground/70 sm:text-lg"
         >
-          A fast terminal with a built-in editor, AI agents, and live web
-          preview. 10&nbsp;MB on disk. 300&nbsp;ms cold start. BYOK or fully
+          A lightweight AI terminal with a built-in editor, AI agents, and live
+          web preview. 7&nbsp;MB on disk. 300&nbsp;ms cold start. BYOK or fully
           local.
         </motion.p>
 
@@ -138,7 +138,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.32 }}
-          className="mt-6 flex items-center gap-3 font-mono text-[11px] tracking-[0.12em] text-muted-foreground/70 uppercase"
+          className="mt-6 flex items-center gap-3 font-mono text-[11px] tracking-[0.12em] text-foreground/60 uppercase"
         >
           <span>macOS</span>
           <span className="size-1 rounded-full bg-muted-foreground/40" />

@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 
-import { ThemeProvider } from "@/components/theme-provider"
 import { BackgroundWaves } from "@/components/site/background-waves"
-import { cn } from "@/lib/utils"
+import { ThemeProvider } from "@/components/theme-provider"
 import { SITE } from "@/lib/site"
+import { cn } from "@/lib/utils"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -17,8 +17,8 @@ const fontMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — ${SITE.tagline}`,
-    template: `%s — ${SITE.name}`,
+    default: `${SITE.name} - ${SITE.tagline}`,
+    template: `%s - ${SITE.name}`,
   },
   description: SITE.description,
   applicationName: SITE.name,
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE.url,
-    title: `${SITE.name} — ${SITE.tagline}`,
+    title: `${SITE.name} - ${SITE.tagline}`,
     description: SITE.description,
     siteName: SITE.name,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — ${SITE.tagline}`,
+    title: `${SITE.name} - ${SITE.tagline}`,
     description: SITE.description,
     creator: SITE.twitter,
   },

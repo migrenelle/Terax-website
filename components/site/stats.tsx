@@ -12,10 +12,7 @@ export function Stats() {
     <Section className="!py-12 sm:!py-16">
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/60 md:grid-cols-4">
         {stats.map((s) => (
-          <div
-            key={s.label}
-            className="bg-background px-6 py-8 text-center"
-          >
+          <div key={s.label} className="bg-background px-6 py-8 text-center">
             <div className="font-mono text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
               {s.value}
             </div>

@@ -136,11 +136,10 @@ void main() {
   float pattern = vMask * lines;
 
   float cycleT = fullT * uColorCycleSpeed;
-  float rChannel = (pattern + lines * ridge) * (cos(blended.y + cycleT * 0.234) * 0.5 + 1.0);
-  float gChannel = (pattern + vMask * ridge) * (sin(blended.x + cycleT * 1.745) * 0.5 + 1.0);
-  float bChannel = (pattern + lines * ridge) * (cos(blended.x + cycleT * 0.534) * 0.5 + 1.0);
+  float lum = (pattern + lines * ridge) * (cos(blended.y + cycleT * 0.5) * 0.5 + 1.0);
 
-  vec3 col = (rChannel * uColor1 + gChannel * uColor2 + bChannel * uColor3) * uBrightness;
+  vec3 baseColor = (uColor1 + uColor2 + uColor3) / 3.0;
+  vec3 col = lum * baseColor * uBrightness;
   float alpha = clamp(length(col), 0.0, 1.0);
 
   gl_FragColor = vec4(col, alpha);

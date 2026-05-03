@@ -15,15 +15,15 @@ export function BackgroundWaves() {
       <div className="absolute inset-0">
         <LineWaves
           rotation={-38}
-          speed={0.18}
-          warpIntensity={0.95}
-          innerLineCount={28}
-          outerLineCount={34}
-          edgeFadeWidth={0.05}
+          speed={0.35}
+          warpIntensity={0.3}
+          innerLineCount={40}
+          outerLineCount={15}
+          edgeFadeWidth={0}
           colorCycleSpeed={0}
           brightness={isDark ? 0.16 : 0.32}
           color1="#ffffff"
-          color2="#000000"
+          color2="#ffffff"
           color3="#ffffff"
           enableMouseInteraction
           mouseInfluence={1.6}

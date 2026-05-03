@@ -1,16 +1,16 @@
 "use client"
 
-import * as React from "react"
-import { useTheme } from "next-themes"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { Moon02Icon, Sun03Icon } from "@hugeicons/core-free-icons"
 import { Button } from "@/components/ui/button"
+import { Moon02Icon, Sun03Icon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { useTheme } from "next-themes"
+import * as React from "react"
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
   React.useEffect(() => {
-    // hydration-safe mount flag — must run after mount
+    // hydration-safe mount flag - must run after mount
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
   }, [])

@@ -1,21 +1,21 @@
 "use client"
 
-import Link from "next/link"
-import { HugeiconsIcon } from "@hugeicons/react"
 import {
   AppleIcon,
-  ComputerIcon,
-  MicrosoftIcon,
-  Download04Icon,
   ArrowRight01Icon,
+  ComputerIcon,
+  Download04Icon,
+  MicrosoftIcon,
 } from "@hugeicons/core-free-icons"
 import type { IconSvgElement } from "@hugeicons/react"
+import { HugeiconsIcon } from "@hugeicons/react"
+import Link from "next/link"
 
-import { cn } from "@/lib/utils"
-import { DOWNLOADS, SITE, VERSION } from "@/lib/site"
 import { Button } from "@/components/ui/button"
-import { Section, SectionEyebrow, SectionHeading } from "./section"
+import { DOWNLOADS, SITE, VERSION } from "@/lib/site"
+import { cn } from "@/lib/utils"
 import { usePlatform } from "./platform-detect"
+import { Section, SectionEyebrow, SectionHeading } from "./section"
 
 interface BuildRow {
   arch: string
@@ -82,7 +82,7 @@ const platforms: PlatformBlock[] = [
     icon: MicrosoftIcon,
     name: "Windows",
     note: "Coming soon",
-    builds: [{ arch: "x86_64", file: "—", available: false }],
+    builds: [{ arch: "x86_64", file: "-", available: false }],
   },
 ]
 
@@ -106,15 +106,22 @@ export function Download() {
     return {
       label: "Download for macOS",
       url: DOWNLOADS.macSilicon.url,
-      sub: "Apple Silicon — Intel build below",
+      sub: "Apple Silicon - Intel build below",
     }
   })()
 
   return (
-    <Section id="download" className="border-t border-border/40">
-      <div className="grid gap-8 lg:grid-cols-12">
+    <Section
+      id="download"
+      className="overflow-hidden border-t border-border/40"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 bg-foreground/[0.025] [mask-image:radial-gradient(ellipse_55%_60%_at_50%_0%,black,transparent_70%)]"
+      />
+      <div className="relative grid gap-8 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <SectionEyebrow>06 — Download · v{VERSION}</SectionEyebrow>
+          <SectionEyebrow>06 - Download · v{VERSION}</SectionEyebrow>
           <SectionHeading className="mt-3">
             Pick a build. Run it.
           </SectionHeading>
@@ -139,11 +146,7 @@ export function Download() {
               {recommended.disabled ? (
                 <span>{recommended.label}</span>
               ) : (
-                <Link
-                  href={recommended.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <Link href={recommended.url} target="_blank" rel="noreferrer">
                   <HugeiconsIcon icon={Download04Icon} strokeWidth={2} />
                   {recommended.label}
                 </Link>

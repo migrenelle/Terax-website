@@ -1,14 +1,14 @@
 "use client"
 
-import * as React from "react"
+import { GithubIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import Image from "next/image"
 import Link from "next/link"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { GithubIcon } from "@hugeicons/core-free-icons"
+import * as React from "react"
 
-import { cn } from "@/lib/utils"
-import { SITE } from "@/lib/site"
 import { Button } from "@/components/ui/button"
+import { SITE } from "@/lib/site"
+import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
 
 const navLinks = [
@@ -39,7 +39,7 @@ export function SiteHeader() {
           "mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 sm:px-6",
           "rounded-full transition-all duration-300",
           scrolled &&
-            "border border-white/10 bg-white/70 px-4 py-2 backdrop-blur-xl shadow-lg shadow-black/[0.04] dark:border-white/[0.08] dark:bg-zinc-950/60 dark:shadow-black/40"
+            "border border-white/10 bg-white/70 px-4 py-2 shadow-lg shadow-black/[0.04] backdrop-blur-xl dark:border-white/[0.08] dark:bg-zinc-950/60 dark:shadow-black/40"
         )}
       >
         <Link
