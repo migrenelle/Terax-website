@@ -12,9 +12,10 @@ import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
 
 const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#download", label: "Download" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#features", label: "Features" },
+  { href: "/about", label: "About" },
+  { href: "/changelog", label: "Changelog" },
+  { href: "/#faq", label: "FAQ" },
 ]
 
 export function SiteHeader() {
@@ -36,7 +37,7 @@ export function SiteHeader() {
     >
       <div
         className={cn(
-          "mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 sm:px-6",
+          "mx-3 flex max-w-6xl items-center justify-between gap-4 px-4 sm:mx-auto sm:px-6",
           "rounded-full transition-all duration-300",
           scrolled &&
             "border border-white/10 bg-white/70 px-4 py-2 shadow-lg shadow-black/[0.04] backdrop-blur-xl dark:border-white/[0.08] dark:bg-zinc-950/60 dark:shadow-black/40"

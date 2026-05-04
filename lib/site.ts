@@ -1,16 +1,15 @@
-export const VERSION = "0.5.8"
+export const VERSION = "0.5.9"
 
 export const SITE = {
   name: "Terax",
   domain: "terax.app",
   url: "https://terax.app",
-  tagline: "A terminal, editor, web preview, and AI - all in one 7 MB binary.",
+  tagline: "Terax: a lightweight AI terminal (ADE)",
   description:
     "Terax is a lightweight AI terminal with a built-in editor, AI agents, voice input, and live web preview. 7 MB on disk, 300 ms cold start. Free and open source. BYOK or fully local via LM Studio.",
   github: "https://github.com/crynta/terax-ai",
   githubReleases: "https://github.com/crynta/terax-ai/releases",
   issues: "https://github.com/crynta/terax-ai/issues",
-  twitter: "@terax_ai",
 } as const
 
 const releaseBase = `${SITE.githubReleases}/download/v${VERSION}`

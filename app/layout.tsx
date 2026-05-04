@@ -5,6 +5,7 @@ import { BackgroundWaves } from "@/components/site/background-waves"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SITE } from "@/lib/site"
 import { cn } from "@/lib/utils"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -27,10 +28,10 @@ export const metadata: Metadata = {
     "AI IDE",
     "AI code editor",
     "agentic coding",
-    "vim mode",
+    "React terminal",
     "xterm.js",
-    "local LLM",
-    "LM Studio",
+    "Tauri terminal",
+    "Terminal Emulator",
     "BYOK",
     "developer tools",
     "open source terminal",
@@ -51,7 +52,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE.name} - ${SITE.tagline}`,
     description: SITE.description,
-    creator: SITE.twitter,
   },
   icons: {
     icon: [
@@ -95,6 +95,7 @@ export default function RootLayout({
           <BackgroundWaves />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
