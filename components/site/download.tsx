@@ -81,8 +81,14 @@ const platforms: PlatformBlock[] = [
     id: "windows",
     icon: MicrosoftIcon,
     name: "Windows",
-    note: "Coming soon",
-    builds: [{ arch: "x86_64", file: "-", available: false }],
+    builds: [
+      {
+        arch: "x86_64 · NSIS installer",
+        file: DOWNLOADS.windows.file,
+        url: DOWNLOADS.windows.url,
+        available: true,
+      },
+    ],
   },
 ]
 
@@ -98,10 +104,9 @@ export function Download() {
       }
     if (detected === "windows")
       return {
-        label: "Windows · coming soon",
-        url: "",
-        sub: "Subscribe to releases on GitHub",
-        disabled: true,
+        label: "Download for Windows",
+        url: DOWNLOADS.windows.url,
+        sub: "x86_64 · NSIS installer",
       }
     return {
       label: "Download for macOS",
@@ -137,20 +142,11 @@ export function Download() {
             <div className="mt-2 text-sm text-foreground/85">
               {recommended.sub}
             </div>
-            <Button
-              asChild={!recommended.disabled}
-              disabled={recommended.disabled}
-              size="lg"
-              className="mt-4 w-full rounded-full"
-            >
-              {recommended.disabled ? (
-                <span>{recommended.label}</span>
-              ) : (
-                <Link href={recommended.url} target="_blank" rel="noreferrer">
-                  <HugeiconsIcon icon={Download04Icon} strokeWidth={2} />
-                  {recommended.label}
-                </Link>
-              )}
+            <Button asChild size="lg" className="mt-4 w-full rounded-full">
+              <Link href={recommended.url} target="_blank" rel="noreferrer">
+                <HugeiconsIcon icon={Download04Icon} strokeWidth={2} />
+                {recommended.label}
+              </Link>
             </Button>
             <Link
               href={SITE.githubReleases}

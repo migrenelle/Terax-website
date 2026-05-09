@@ -28,10 +28,9 @@ export function Hero() {
         }
       : platform === "windows"
         ? {
-            label: "Windows · coming soon",
-            href: "#download",
+            label: "Download for Windows",
+            href: DOWNLOADS.windows.url,
             icon: MicrosoftIcon,
-            disabled: true,
           }
         : {
             label: "Download for macOS",
@@ -105,18 +104,8 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.18 }}
           className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
         >
-          <Button
-            asChild
-            size="lg"
-            className="rounded-full px-5"
-            disabled={primary.disabled}
-          >
-            <Link
-              href={primary.href}
-              {...(primary.href.startsWith("http")
-                ? { target: "_blank", rel: "noreferrer" }
-                : {})}
-            >
+          <Button asChild size="lg" className="rounded-full px-5">
+            <Link href={primary.href} target="_blank" rel="noreferrer">
               <HugeiconsIcon icon={primary.icon} strokeWidth={2} />
               {primary.label}
             </Link>
@@ -144,7 +133,7 @@ export function Hero() {
           <span className="size-1 rounded-full bg-muted-foreground/40" />
           <span>Linux</span>
           <span className="size-1 rounded-full bg-muted-foreground/40" />
-          <span className="opacity-75">Windows - soon</span>
+          <span>Windows</span>
         </motion.div>
       </div>
     </section>

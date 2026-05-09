@@ -1,4 +1,4 @@
-export const VERSION = "0.5.9"
+export const VERSION = "0.6.0"
 
 export const SITE = {
   name: "Terax",
@@ -52,10 +52,10 @@ export const DOWNLOADS = {
   },
   windows: {
     label: "Windows",
-    file: "",
-    arch: "Coming soon",
-    url: "",
-    available: false,
+    file: `Terax_${VERSION}_x64-setup.exe`,
+    arch: "x86_64",
+    url: `${releaseBase}/Terax_${VERSION}_x64-setup.exe`,
+    available: true,
   },
 } as const
 

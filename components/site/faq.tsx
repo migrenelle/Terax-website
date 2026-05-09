@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Which OSes are supported?",
-    a: "macOS (Apple Silicon) and Linux (AppImage / .deb / .rpm) are available today. Windows is coming soon.",
+    a: "macOS (Apple Silicon / Intel), Linux (AppImage / .deb / .rpm), and Windows (x86_64 NSIS installer) are all available today.",
   },
   {
     q: "Where do I report bugs or request features?",

@@ -42,7 +42,7 @@ export default function AboutPage() {
         <p>
           Terax is a desktop app that combines a terminal, a code editor, a file
           explorer, a web preview, and an AI workflow. It runs as a single ~7 MB
-          binary on macOS and Linux. Windows is on the way.
+          binary on macOS, Linux, and Windows.
         </p>
         <p>
           You can use it as a plain terminal and ignore the AI side entirely.
