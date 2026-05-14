@@ -3,7 +3,7 @@ import { Section } from "./section"
 const stats = [
   { value: "< 10MB", label: "App size" },
   { value: "~300ms", label: "Cold start" },
-  { value: "WebGL", label: "xterm.js renderer" },
+  { value: "No telemetry", label: "Ever" },
   { value: "100%", label: "Open source" },
 ]
 
