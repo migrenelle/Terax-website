@@ -1,4 +1,4 @@
-export const VERSION = "0.6.6"
+export const VERSION = "0.7.1"
 
 export const SITE = {
   name: "Terax",
