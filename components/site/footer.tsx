@@ -1,4 +1,4 @@
-import { GithubIcon } from "@hugeicons/core-free-icons"
+import { GithubIcon, YoutubeIcon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import Image from "next/image"
 import Link from "next/link"
@@ -60,19 +60,34 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {SITE.name}. Built for developers, by
             developers.
           </span>
-          <Link
-            href={SITE.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <HugeiconsIcon
-              icon={GithubIcon}
-              className="size-3.5"
-              strokeWidth={2}
-            />
-            crynta/terax-ai
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href={SITE.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+            >
+              <HugeiconsIcon
+                icon={GithubIcon}
+                className="size-3.5"
+                strokeWidth={2}
+              />
+              crynta/terax-ai
+            </Link>
+            <Link
+              href={SITE.youtube}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 transition-colors hover:text-foreground"
+            >
+              <HugeiconsIcon
+                icon={YoutubeIcon}
+                className="size-3.5"
+                strokeWidth={2}
+              />
+             crynta
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
