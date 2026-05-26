@@ -1,7 +1,22 @@
 {
-  "title": "Overview",
   "pages": [
+    "---Overview---",
     "index",
-    "getting-started"
+    "getting-started/index",
+    "getting-started/customization",
+    "---Core Features---",
+    "features/terminal",
+    "features/editor",
+    "features/explorer",
+    "features/preview",
+    "features/git",
+    "---AI Workflows---",
+    "ai/providers",
+    "ai/agents",
+    "ai/security",
+    "---Reference---",
+    "reference/config",
+    "reference/shortcuts",
+    "reference/shell-integration"
   ]
 }

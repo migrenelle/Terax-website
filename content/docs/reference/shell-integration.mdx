@@ -1,0 +1,59 @@
+---
+title: Shell Integration
+description: Learn how to set up custom shell prompts, OSC 7 working directory syncing, and command tracking.
+icon: CommandLine
+---
+
+Terax automatically configures your default system shell during spawn by injecting environment profiles. If you use a custom shell configuration or want to understand the exact escape sequences, this guide covers the integration details.
+
+## OSC 7: Working Directory Syncing
+
+OSC 7 sequences inform Terax of your shell's current working directory. This enables the sidebar file explorer to automatically follow your terminal navigation.
+
+To emit OSC 7 manually on shell directory changes, print the directory URL using an escape sequence.
+
+### Unix Shells (Zsh / Bash)
+
+Add this hook function to your shell configuration (`~/.zshrc` or `~/.bashrc`):
+
+```bash
+# Print OSC 7 sequence on prompt draw
+update_terminal_cwd() {
+  printf "\033]7;file://%s%s\007" "$HOSTNAME" "$PWD"
+}
+
+# Add hook for prompt execution
+if [ -n "$ZSH_VERSION" ]; then
+  precmd_functions+=(update_terminal_cwd)
+elif [ -n "$BASH_VERSION" ]; then
+  PROMPT_COMMAND="update_terminal_cwd; $PROMPT_COMMAND"
+fi
+```
+
+### PowerShell
+
+Add this wrapper to your `$PROFILE`:
+
+```powershell
+function prompt {
+    # Print OSC 7 path sequence
+    $cwd = $ExecutionContext.SessionState.Path.CurrentLocation.Path
+    Write-Host -NoNewline "$([char]27)]7;file://$env:COMPUTERNAME/$cwd$([char]7)"
+
+    # Return default prompt string
+    "PS $cwd> "
+}
+```
+
+---
+
+## OSC 133: Command Tracking
+
+OSC 133 sequences define command execution boundaries. This enables Terax's PTY reader to distinguish between the prompt, the command typed, the output generated, and the exit status.
+
+- **OSC 133; A**: Marks the start of the prompt.
+- **OSC 133; B**: Marks the end of the prompt (the user input start).
+- **OSC 133; C**: Marks the start of command execution (output start).
+- **OSC 133; D; [code]**: Marks the completion of the command and returns the exit status code.
+
+Terax scans PTY streams for these codes to detect active coding agents and display context alerts in the sidebar dashboard.

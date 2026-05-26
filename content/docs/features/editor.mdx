@@ -1,0 +1,36 @@
+---
+title: Editor Subsystem
+description: Details about the built-in CodeMirror 6 text editor, Vim mode, and syntax themes.
+icon: Code
+---
+
+Terax embeds a full-featured text editor directly into its workspace, eliminating the need to transition to external editors for quick changes or coding sessions.
+
+## Core Stack
+
+The editor is built on the CodeMirror 6 library. CodeMirror is configured as a React component stack (`EditorStack`) matching the active tab registry:
+
+- **Background Execution**: Tabs are not unmounted when switched. Instead, they are hidden using CSS style rules. This allows file states, cursor positions, and undos to persist when you switch between tabs.
+- **Low Latency**: Key events are captured and executed directly within the frontend engine. This yields sub-millisecond latency for standard editing operations.
+
+## Vim Mode
+
+Terax includes first-class support for Vim keyboard layouts. When enabled:
+
+- The editor instantiates a custom Vim input handler.
+- All standard Vim motions, registers, marks, and visual selection modes are supported.
+- Command mode operations (like `:w`, `:q`, `:s`) execute their corresponding workspace commands.
+
+To enable or disable Vim bindings, toggle the `vim_mode` setting inside your main configuration file.
+
+## Theme Engine and Syntax Styles
+
+The editor's appearance is controlled by the central theme coordinator. Terax ships with several preconfigured syntax themes:
+
+- **Tokyo Night**
+- **Nord**
+- **Atom One**
+- **Xcode Dark**
+- **Gruvbox Dark**
+
+Themes write custom CSS variable trees to the page root, updating the editor theme automatically without component re-renders.

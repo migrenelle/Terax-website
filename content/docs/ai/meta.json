@@ -1,0 +1,9 @@
+{
+  "title": "AI Integration & Subsystem",
+  "icon": "AiIdea",
+  "pages": [
+    "providers",
+    "agents",
+    "security"
+  ]
+}

@@ -1,6 +1,7 @@
 ---
 title: Customizing your Terminal
 description: Personalize your Terax terminal themes, presets, and fonts.
+icon: PaintBrush
 ---
 
 Terax is designed to be fully customized to match your development aesthetic. From editor color schemes to file explorer icons, everything is configurable.
@@ -9,10 +10,10 @@ Terax is designed to be fully customized to match your development aesthetic. Fr
 
 Terax comes prebuilt with several terminal and editor color palettes:
 
-*   **Catppuccin (Mocha/Macchiato):** Soft, high-contrast pastel colors.
-*   **Tokyo Night:** A dark, vibrant theme inspired by the lights of Tokyo.
-*   **One Dark:** The classic, clean Atom-inspired syntax scheme.
-*   **Dracula:** A classic dark, high-contrast palette.
+- **Catppuccin (Mocha/Macchiato):** Soft, high-contrast pastel colors.
+- **Tokyo Night:** A dark, vibrant theme inspired by the lights of Tokyo.
+- **One Dark:** The classic, clean Atom-inspired syntax scheme.
+- **Dracula:** A classic dark, high-contrast palette.
 
 To cycle through themes, use the command palette (`Cmd + Shift + P`) and type `Preferences: Select Color Theme`.
 
@@ -22,8 +23,8 @@ To cycle through themes, use the command palette (`Cmd + Shift + P`) and type `P
 
 Your preferences are stored in a simple JSON file located in your home directory:
 
-*   **macOS / Linux:** `~/.config/terax/config.json`
-*   **Windows:** `%USERPROFILE%\.config\terax\config.json`
+- **macOS / Linux:** `~/.config/terax/config.json`
+- **Windows:** `%USERPROFILE%\.config\terax\config.json`
 
 Here is an example customization snippet:
 
@@ -45,7 +46,7 @@ Here is an example customization snippet:
 
 ## Customizing the Shell
 
-Since Terax launches your default system shell (`zsh`, `bash`, or `fish`), you can continue using your favorite prompts like **Starship** or **Oh My Zsh**. 
+Since Terax launches your default system shell (`zsh`, `bash`, or `fish`), you can continue using your favorite prompts like **Starship** or **Oh My Zsh**.
 
 For optimal performance, make sure to enable the WebGL renderer in your configuration settings:
 
@@ -56,4 +57,5 @@ For optimal performance, make sure to enable the WebGL renderer in your configur
   }
 }
 ```
+
 This ensures sub-millisecond keystroke latency and smooth scrolling even with heavy command logs.

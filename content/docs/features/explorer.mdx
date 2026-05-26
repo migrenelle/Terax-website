@@ -1,0 +1,30 @@
+---
+title: File Explorer and Search
+description: Learn about the file browser, directory tree navigation, fuzzy finder, and global search inside Terax.
+icon: CodeFolder
+---
+
+Terax contains an integrated file explorer and a search subsystem designed for fast codebase navigation.
+
+## File Browser UI
+
+The sidebar displays a directory explorer tree populated using filesystem Tauri commands. Features include:
+
+- **Catppuccin File Icons**: Auto-resolves folder and file icons based on extensions and names.
+- **Keyboard Navigation**: Move through files, toggle folders, and open selections using arrow keys.
+- **Context Actions**: Create, delete, rename, or reveal items from the tree.
+- **Cross-Platform Separators**: Path inputs are normalized using separator-aware string splits. On Windows, backslashes are converted to forward slashes at the webview boundary to keep tree states consistent.
+
+## Fuzzy File Finder
+
+Pressing `Cmd + P` (or `Ctrl + P`) launches the fuzzy file finder.
+
+- **Backend**: Rust runs file indexing using the `ignore` crate, which respects your `.gitignore` and `.ignore` rule sets.
+- **Performance**: Paths are indexed in Rust background threads and transmitted as arrays to keep search interactions fast.
+
+## Global Content Search (Grep)
+
+Global search runs full-text searches using ripgrep algorithms in Rust.
+
+- **Filters**: Search queries accept glob patterns to filter targets.
+- **Stream Results**: Results stream into the search panel, grouping matches by file paths and highlight locations.

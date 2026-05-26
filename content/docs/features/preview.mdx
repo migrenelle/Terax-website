@@ -1,0 +1,19 @@
+---
+title: Live Web Preview
+description: Details about the auto-detecting localhost live web preview tab in Terax.
+icon: Browser
+---
+
+Terax contains an integrated web preview browser that runs alongside your terminal sessions.
+
+## How It Works
+
+The web preview bridges the gap between terminal script execution and browser verification:
+
+- **Auto-Detection**: The PTY reader scans command outputs for server start markers (like `localhost:3000`, `127.0.0.1`, or `vite`).
+- **Status Bar Pill**: When a development server is detected, a status-bar pill appears indicating that a preview is available.
+- **Side-by-Side Tab**: Clicking the pill opens a preview tab. Like terminal and editor tabs, the preview is managed as an iframe that persists in the background when inactive.
+
+## Hot Reloading
+
+Because the preview mounts directly inside the Tauri webview context, it uses the host's WebSocket connections to handle hot module replacement (HMR) seamlessly. Any edit you save in the editor compiles and updates the preview immediately.

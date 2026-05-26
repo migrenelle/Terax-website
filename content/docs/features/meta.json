@@ -1,0 +1,11 @@
+{
+  "title": "Core Workspace Features",
+  "icon": "Layout",
+  "pages": [
+    "terminal",
+    "editor",
+    "explorer",
+    "preview",
+    "git"
+  ]
+}

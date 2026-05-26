@@ -1,0 +1,9 @@
+{
+  "title": "Reference & Advanced",
+  "icon": "Notebook",
+  "pages": [
+    "config",
+    "shortcuts",
+    "shell-integration"
+  ]
+}

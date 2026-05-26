@@ -1,0 +1,31 @@
+---
+title: Agent Security & Permissions
+description: Details about the safety boundaries, terminal confirmation cards, and the secret-path deny-list in Terax.
+icon: Shield
+---
+
+Terax implements strict permission boundaries to prevent AI agents from executing destructive actions or leaking private credentials.
+
+## Terminal Confirmation Cards
+
+AI tools are divided into two categories:
+
+- **Passive Tools**: Reading directories or searching files executes automatically.
+- **Active Tools**: Modifying files, creating folders, running terminal commands, or launching background processes require user approval.
+
+When an active tool is requested by the AI:
+
+1. The AI execution pauses.
+2. React displays an in-UI confirmation card showing the requested command or file edit.
+3. The user can review the proposed changes, accept them, or reject them.
+
+## Inline Edit Diffs
+
+Before a file write tool executes, proposed edits are displayed in a side-by-side comparison tab (`ai-diff`). You can accept or reject proposed changes line-by-line before they are written to disk.
+
+## The Secret Path Deny-list
+
+Terax maintains a strict secret path deny-list enforced in Rust. The boundary applies to both read and write operations:
+
+- **Blocked Targets**: Any attempts to access `.env` files, `.ssh/` keys, secure keychain paths, cloud credentials, or browser data directories are immediately rejected.
+- **No Bypass**: The deny-list logic runs on the filesystem backend module in Rust, meaning it cannot be bypassed by AI agent instruction overrides.
