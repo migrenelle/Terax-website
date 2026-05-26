@@ -343,6 +343,7 @@ export async function GET(
                           display: "flex",
                           color: "#cbd5e1",
                           fontSize: "24px",
+                          paddingLeft: heading.depth > 2 ? "12px" : "0px",
                         }}
                       >
                         •
@@ -352,7 +353,6 @@ export async function GET(
                           display: "flex",
                           fontSize: "22px",
                           color: "white",
-                          paddingLeft: heading.depth > 2 ? "12px" : "0px",
                           whiteSpace: "nowrap",
                           overflow: "hidden",
                           textOverflow: "ellipsis",
