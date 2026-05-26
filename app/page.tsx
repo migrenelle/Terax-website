@@ -18,6 +18,8 @@ import {
   CommandLineIcon,
   CpuIcon,
   EnergyIcon,
+  GitBranchIcon,
+  Image01Icon,
   Layout02Icon,
   Mic01Icon,
   Notebook01Icon,
@@ -124,6 +126,39 @@ export default function HomePage() {
           />
 
           <FeatureShowcase
+            id="source-control"
+            index="03"
+            eyebrow="Source control"
+            title="Git, with a graph that finally makes sense."
+            description="Stage hunks, commit with one shortcut, and read history through a real commit graph - all without leaving your tab."
+            bullets={[
+              {
+                icon: GitBranchIcon,
+                label: "Hunk-level stage / unstage / discard",
+              },
+              {
+                icon: CommandIcon,
+                label: "Commit with Cmd+Enter, push with upstream awareness",
+              },
+              {
+                icon: Layout02Icon,
+                label: "Commit graph with branches, merges, and refs",
+              },
+              {
+                icon: Search01Icon,
+                label: "Search commits, jump to the remote page",
+              },
+            ]}
+            image={{
+              src: "/source-control.webp",
+              alt: "Terax source control panel with diff and commit graph",
+              width: 2560,
+              height: 1600,
+              caption: "source control · git history",
+            }}
+          />
+
+          <FeatureShowcase
             id="agents"
             index="03"
             eyebrow="AI workflow"
@@ -189,6 +224,39 @@ export default function HomePage() {
               caption: "preview · http://localhost:5173",
             }}
             reverse
+          />
+
+          <FeatureShowcase
+            id="themes"
+            index="05"
+            eyebrow="Themes"
+            title="Make it yours, down to the last pixel."
+            description="Ten editor themes, ten app palettes, custom themes you build in-app, and a background image with adjustable opacity and blur."
+            bullets={[
+              {
+                icon: PaintBrush02Icon,
+                label: "Bundled: terax-default, nord, tokyo-night, catppuccin, gruvbox, rose-pine, sage, caffeine, claude, tide",
+              },
+              {
+                icon: Image01Icon,
+                label: "Background image with opacity + blur sliders",
+              },
+              {
+                icon: CodeIcon,
+                label: "Build custom themes, export and share JSON",
+              },
+              {
+                icon: CommandIcon,
+                label: "Editor theme picks independently from the app",
+              },
+            ]}
+            image={{
+              src: "/themes.webp",
+              alt: "Terax theme picker showing bundled themes and a custom background image",
+              width: 2560,
+              height: 1600,
+              caption: "settings · themes",
+            }}
           />
         </div>
 
