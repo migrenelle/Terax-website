@@ -9,6 +9,111 @@ export interface ChangelogEntry {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "0.7.3",
+    date: "2026-05-25",
+    highlight:
+      "Agent notifications + management, live fs watcher, /claude-code command, Windows polish.",
+    groups: [
+      {
+        kind: "Added",
+        items: [
+          "Agent notifications and management - one bell, one router for the built-in agent and every terminal coding agent.",
+          "Live filesystem watcher for the explorer tree and open editors.",
+          "/claude-code slash command to orchestrate agents via Terax AI.",
+        ],
+      },
+      {
+        kind: "Fixed",
+        items: [
+          "Editor: preserve original file permissions on atomic-write rename.",
+          "PTY: authorize the CLI launch directory in the workspace registry on startup.",
+          "Settings window is resizable, with a larger default size.",
+          "Terminal: cwd above home, Windows verbatim paths, CI/test hardening.",
+          "Windows: System32 launch dir, PTY reload reap, paste + stale-render fixes.",
+        ],
+      },
+    ],
+  },
+  {
+    version: "0.7.1",
+    date: "2026-05-21",
+    highlight:
+      "Themes and customization, MLX + Ollama, Windows ConPTY lifecycle fixes.",
+    groups: [
+      {
+        kind: "Added",
+        items: [
+          "Custom themes and presets - build in-app, save, switch between bundled and your own. Covers terminal palette and surrounding UI together.",
+          "Background images with adjustable opacity and blur (new defaults: 50% opacity, 0 blur).",
+          "Editor-based custom theme editor - edit tokens inline rather than hand-writing config.",
+          "Full ANSI terminal palette in the theme model.",
+          "MLX and Ollama as local AI providers, with autocomplete via local models.",
+        ],
+      },
+      {
+        kind: "Changed",
+        items: [
+          "Reasoning / thinking blocks stripped from history before the model call (Cerebras rejected them, others paid tokens).",
+          "Composer keeps focus and accepts typing while the agent is streaming - queue follow-ups instead of waiting.",
+          "Models settings tab redesigned, model picker scroll fixed.",
+          "AI mini-window: todo panel sizes to content, caps at 35% for long lists.",
+        ],
+      },
+      {
+        kind: "Fixed",
+        items: [
+          "Windows ConPTY lifecycle race - CreatePseudoConsole and ClosePseudoConsole now share one lock. Fixes the WSL-to-Local blank-terminal case.",
+          "Console window no longer flashes when Terax spawns subprocesses (shell init, git).",
+          "New terminals no longer try to launch into the install directory.",
+          "Shortcut changes made in Settings propagate to the main window without a restart.",
+          "Agent and snippet editor dialogs scroll their body so Save/Cancel cannot get pushed off screen.",
+          "Selection rendering across themes; Linux clipboard handling.",
+        ],
+      },
+    ],
+  },
+  {
+    version: "0.7.0",
+    date: "2026-05-20",
+    highlight:
+      "Source control panel + git graph, security hardening, broad multi-platform fixes.",
+    groups: [
+      {
+        kind: "Added",
+        items: [
+          "Source control panel with hunk staging, commit, and a real commit graph.",
+          "Open in Terax shell integration on Windows.",
+          "Mistral AI provider.",
+          "Ruby syntax highlighting in the editor.",
+          "Markdown preview tab via explorer right-click.",
+          "Configurable context limit for OpenAI-compatible providers.",
+          "Configurable terminal font family.",
+        ],
+      },
+      {
+        kind: "Changed",
+        items: [
+          "Security pass: AI tool deny-list hardening, SSRF guard, terminal OSC trust boundary, preview iframe sandbox, WSL distro validation.",
+        ],
+      },
+      {
+        kind: "Fixed",
+        items: [
+          "WSL: git and shells honor the workspace env.",
+          "Explorer: file tree stays static across InlineInput open/cancel cycles.",
+          "AI mini-window: responsive, scrollable todo list.",
+          "Terminal: Option+arrow word navigation.",
+          "Terminal: TUIs repaint on resume instead of replaying dormant bytes.",
+          "Search: terminal refocuses after dismissing find.",
+          "Editor: files auto-reload when the AI modifies them.",
+          "Editor undo/redo wired and surfaced in the shortcuts dialog.",
+          "Security: shell command guard now blocks CR/LF and C0 controls (prevented smuggling a second statement past approval). Reported by Peter D Mora IV.",
+          "Security: O_EXCL random tempfile for atomic writes (closed a symlink-staging path that could redirect approved writes). Reported by chocolatecake777.",
+        ],
+      },
+    ],
+  },
+  {
     version: "0.6.6",
     highlight: "Terminal renderer pool tuning and stability fixes.",
     groups: [
