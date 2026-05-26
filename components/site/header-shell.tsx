@@ -17,6 +17,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/changelog", label: "Changelog" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/docs", label: "Docs" },
 ]
 
 interface HeaderShellProps {

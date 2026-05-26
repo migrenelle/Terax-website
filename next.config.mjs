@@ -1,3 +1,7 @@
+import { createMDX } from 'fumadocs-mdx/next';
+
+const withMDX = createMDX();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -7,6 +11,14 @@ const nextConfig = {
       { protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/docs/:path*.md',
+        destination: '/llms.mdx/docs/:path*',
+      },
+    ];
+  },
 }
 
-export default nextConfig
+export default withMDX(nextConfig)
