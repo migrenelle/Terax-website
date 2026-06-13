@@ -9,6 +9,51 @@ export interface ChangelogEntry {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "0.8.0",
+    date: "2026-06-13",
+    highlight:
+      "Command palette, GPU block-mode terminal, spaces, broad file-type support, and a UI/UX pass.",
+    groups: [
+      {
+        kind: "Added",
+        items: [
+          "Command palette: fuzzy launcher for every quick action, with in-file content search and command history.",
+          "Block-mode terminal: GPU-accelerated, Warp-style command blocks with a unified shell/AI input bar and editor-like input panel.",
+          "Spaces: persisted tab groups you can create, rename, and drag to organize.",
+          "Media and document viewers: images, audio, video, PDF, and rendered or raw markdown.",
+          "Explorer: drag-and-drop support and git decorations on the file tree.",
+          "Zen mode to hide the header and status bar.",
+          "Editor auto-save with a configurable delay.",
+          "Multiple OpenAI-compatible endpoints; LaTeX and Astro syntax highlighting.",
+          "Terminal: macOS readline bindings (Cmd+Arrow, Cmd/Opt+Backspace), Cmd+K to clear scrollback, rename tabs via right-click, middle-click to close.",
+          "Drop file paths into the active pane with bracketed-paste and DPI-correct hit detection.",
+          "Confirm before closing a tab with a running process.",
+          "Official Nix/NixOS support with an auto-update workflow.",
+        ],
+      },
+      {
+        kind: "Changed",
+        items: [
+          "UI/UX polish across tabs, panels, header, and sidebar, with native CSS animations replacing the motion library.",
+          "Dynamic window title from the project folder and active terminal.",
+          "Source control: right-click context menu on changed files.",
+          "Terminal perf: static cursor default, WebGL slot reaping, and TUI keep-alive.",
+        ],
+      },
+      {
+        kind: "Fixed",
+        items: [
+          "Ctrl+B reaches the terminal/Claude; sidebar toggle moved to Ctrl+Shift+B.",
+          "Explorer highlights the active file.",
+          "Editor: correct cursor positioning on macOS at non-100% zoom; language reconfiguration when the document becomes ready.",
+          "macOS: settings window no longer hides behind the main window; press-and-hold character popup disabled.",
+          "Terminal: block IME composition keydown events from reaching the PTY.",
+          "Linux: strip bundled Wayland libs from the AppImage to fix the EGL crash on newer Mesa.",
+        ],
+      },
+    ],
+  },
+  {
     version: "0.7.3",
     date: "2026-05-25",
     highlight:
